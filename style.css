@@ -33,10 +33,11 @@ section {
 }
 
 .title {
-    font-size: 100px; 
-    letter-spacing: 2px; 
+    font-size: 100px;
+    letter-spacing: 2px;
     line-height: 1.5;
 }
+
 /* home­ */
 #home {
     position: relative;
@@ -144,28 +145,6 @@ section {
     background-color: #B698E4;
     transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
 }
-
-/* default btn */
-/* button {
-    display: inline-block;
-    font-size: 30px;
-    padding: 12px 24px;
-    color: #B698E4;
-    background-color: white;
-    border: 2px solid #B698E4;
-    border-radius: 10px;
-    text-decoration: none;
-    transition: all 0.3s ease;
-    font-family: 'MyCustomFont';
-    cursor: pointer;
-}
-
-button:hover {
-    background-color: #B698E4;
-    color: white;
-    transform: scale(1.05);
-} */
-
 
 /* slide­ */
 #slide {
@@ -291,6 +270,24 @@ input:not(:checked)+label+.ci {
 }
 
 /* event info */
+.grid-title {
+    font-size: 50px;
+    letter-spacing: 2px;
+    color: #B698E4;
+}
+
+.info {
+    font-size: 50px;
+    line-height: 1.5;
+    text-align: center;
+    font-weight: 200;
+}
+
+.content {
+    font-size: 50px;
+    /* font-family: 'InfoFont'; */
+}
+
 .info-container {
     display: grid;
     grid-template-columns: 0.8fr 0.5fr 1fr;
@@ -300,14 +297,6 @@ input:not(:checked)+label+.ci {
 
 .info-grid {
     background-color: transparent;
-}
-
-.info {
-    font-size: 25px;
-    line-height: 1.5;
-    text-align: left;
-    font-weight: 200;
-    font-family: 'InfoFont';
 }
 
 .schedule {
@@ -480,8 +469,11 @@ input:not(:checked)+label+.ci {
     }
 
     .info {
-        font-size: 20px;
-        text-align:center
+        font-size: 35px;
+    }
+
+    .content {
+        font-size: 35px;
     }
 
     .button-home {
