@@ -274,6 +274,7 @@ input:not(:checked)+label+.ci {
     font-size: 50px;
     letter-spacing: 2px;
     color: #B698E4;
+    line-height: 2;
 }
 
 .info {
