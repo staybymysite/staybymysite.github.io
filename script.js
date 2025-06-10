@@ -1,3 +1,15 @@
+// loading
+var timeout;
+
+function loadPage() {
+    timeout = setTimeout(showPage, 2000);
+}
+
+function showPage() {
+  document.getElementById("loader").style.display = "none";
+  document.getElementById("wedding").style.display = "block";
+}
+
 // home background
 const bgImages = document.querySelectorAll('.bg-image');
 let currentIndex = 0;

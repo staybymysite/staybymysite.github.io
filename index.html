@@ -8,21 +8,27 @@
     <title>Time for Us</title>
 </head>
 
-<body>
+<body onload="loadPage()" style="margin:0;">
+    <!-- loading -->
+    <div id="loader"></div>
+    <div style="display:none;" id="wedding" class="animate-bottom">
+        <!-- 首頁 -->
+        <section id="home">
+            <div id="bg1" class="bg-image active" style="background-image: url('img/home_01.jpg')"></div>
+            <div id="bg2" class="bg-image" style="background-image: url('img/home_02.jpg')"></div>
+            <div id="bg3" class="bg-image" style="background-image: url('img/home_03.jpg')"></div>
+            <div class="title-container">
+                <p class="title">涂志宏</p>
+                <p class="title">&</p>
+                <p class="title">郭宜婷</p>
+            </div>
+            <button class="button-home" onclick="smoothScrollToElement('slide')">Journey Begins</button>
+        </section>
 
-    <!-- 首頁 -->
-    <section id="home">
-        <div id="bg1" class="bg-image active" style="background-image: url('img/home_01.jpg')"></div>
-        <div id="bg2" class="bg-image" style="background-image: url('img/home_02.jpg')"></div>
-        <div id="bg3" class="bg-image" style="background-image: url('img/home_03.jpg')"></div>
-        <p class="title">涂志宏 & 郭宜婷</p>
-        <button class="button-home" onclick="smoothScrollToElement('slide')">Journey Begins</button>
-    </section>
-
-    <!-- 第二頁：圖片與文字輪播 -->
-    <section id="slide">
-        <p class="title">Our Story</p>
-        <!-- <div class="slider-container">
+        <!-- 第二頁：圖片與文字輪播 -->
+        <section id="slide">
+            <p class="title">Our Story</p>
+            <!-- <div class="slider-container">
             <div class="slides" id="slides">
                 <div class="slide">
                     <img src="img/story_01.jpg" alt="1">
@@ -42,44 +48,44 @@
                 </div>
             </div>
         </div> -->
-        <div class="c">
-            <input type="radio" name="a" id="cr-1" checked>
-            <label for="cr-1" style="--hue: 258"></label>
-            <div class="ci" style="--z: 4">
-                <h2 class="ch" style="--h: 32; --s: 80%; --l: 90%">"You are the one I've been
-                    waiting for."</h2>
-                <img src="img/story_01.jpg" alt="Snow on leafs">
+            <div class="c">
+                <input type="radio" name="a" id="cr-1" checked>
+                <label for="cr-1" style="--hue: 258"></label>
+                <div class="ci" style="--z: 4">
+                    <h2 class="ch" style="--h: 32; --s: 80%; --l: 90%">"You are the one I've been
+                        waiting for."</h2>
+                    <img src="img/story_01.jpg" alt="Snow on leafs">
+                </div>
+
+                <input type="radio" name="a" id="cr-2">
+                <label for="cr-2" style="--hue: 233"></label>
+                <div class="ci" style="--z: 3">
+                    <h2 class="ch" style="--h: 82; --s: 80%; --l: 90%">"I want to grow old with you."</h2>
+                    <img src="img/story_02.jpg" alt="Trees">
+                </div>
+
+                <input type="radio" name="a" id="cr-3">
+                <label for="cr-3" style="--hue: 267"></label>
+                <div class="ci" style="--z: 2">
+                    <h2 class="ch" style="--h: 40; --s: 100%; --l: 89%">"Love isn't about who you
+                        envision spending the rest of your life with; it's about who you imagine being unable to live a
+                        life without."</h2>
+                    <img src="img/story_03.jpg" alt="Mountains and houses">
+                </div>
+
             </div>
+        </section>
 
-            <input type="radio" name="a" id="cr-2">
-            <label for="cr-2" style="--hue: 233"></label>
-            <div class="ci" style="--z: 3">
-                <h2 class="ch" style="--h: 82; --s: 80%; --l: 90%">"I want to grow old with you."</h2>
-                <img src="img/story_02.jpg" alt="Trees">
-            </div>
-
-            <input type="radio" name="a" id="cr-3">
-            <label for="cr-3" style="--hue: 267"></label>
-            <div class="ci" style="--z: 2">
-                <h2 class="ch" style="--h: 40; --s: 100%; --l: 89%">"Love isn't about who you
-                    envision spending the rest of your life with; it's about who you imagine being unable to live a
-                    life without."</h2>
-                <img src="img/story_03.jpg" alt="Mountains and houses">
-            </div>
-
-        </div>
-    </section>
-
-    <!-- 第三頁：地圖 -->
-    <section id="map-section">
-        <p class="title">Event Info.</p>
-        <!-- <div class="info-container"> -->
+        <!-- 第三頁：地圖 -->
+        <section id="map-section">
+            <p class="title">Event Info.</p>
+            <!-- <div class="info-container"> -->
             <div class="info-grid">
                 <!-- Details -->
                 <p class="grid-title">Details</p>
-                <p class="info">日期</p>
+                <p class="info">| 日期 |</p>
                 <p class="content">2025.08.17(星期日)</p>
-                <p class="info">時間</p>
+                <p class="info">| 時間 |</p>
                 <p class="content">10:30 證婚賓客入觀禮席 <br> 11:00 證婚儀式 <br> 11:30 賓客入席 <br> 12:00 準時開席</p>
                 <!-- <ul class="info schedule">
                     <li>10:30 證婚賓客入觀禮席</li>
@@ -87,7 +93,7 @@
                     <li>11:30 賓客入席</li>
                     <li>12:00 準時開席</li>
                 </ul> -->
-                <p class="info">地點</p>
+                <p class="info">| 地點 |</p>
                 <p class="content">青青風車莊園 <br> (桃園市蘆竹區中正北路326號)</p>
                 <!-- Contact -->
                 <p class="grid-title">Contact</p>
@@ -98,7 +104,7 @@
             <div class="info-grid">
                 <!-- Dress Code -->
                 <p class="grid-title">Dress Code</p>
-                <p class="info">服裝色系建議</p>
+                <p class="info">| 服裝色系建議 |</p>
                 <p class="content">米白色 / 藍色 / 卡其色</p>
                 <svg width="64px" height="64px" viewBox="-1.12 -1.12 18.24 18.24" fill="none"
                     xmlns="http://www.w3.org/2000/svg" stroke="#ededed">
@@ -176,40 +182,40 @@
                         公車：桃園航空捷運線先導公車-GR路線，中正北路320巷下車後即可抵達青青風車莊園</li> -->
                 </ul>
             </div>
-        <!-- </div> -->
-        <div class="google-map">
-            <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7229.892167398566!2d121.28382747595624!3d25.03590373821378!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34681fc28ebd77b9%3A0x57d684ad2eab4f66!2z6Z2S6Z2S6aKo6LuK6I6K5ZyS!5e0!3m2!1szh-TW!2stw!4v1749269668693!5m2!1szh-TW!2stw"
-                allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-        </div>
-    </section>
+            <!-- </div> -->
+            <div class="google-map">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7229.892167398566!2d121.28382747595624!3d25.03590373821378!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34681fc28ebd77b9%3A0x57d684ad2eab4f66!2z6Z2S6Z2S6aKo6LuK6I6K5ZyS!5e0!3m2!1szh-TW!2stw!4v1749269668693!5m2!1szh-TW!2stw"
+                    allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </section>
 
-    <!-- Banner 區 -->
-    <section id="banner">
-        <p style="font-size: 100px; letter-spacing: 2px; line-height: 1;">Join Our Ceremony!</p>
-        <p style="font-size: 50px; letter-spacing: 2px; line-height: 1.5;">Click here to complete the form.</p>
-        <a class="button-link type1" href="https://www.surveycake.com/s/BakOw" target="_blank">RSVP</a>
-    </section>
+        <!-- Banner 區 -->
+        <section id="banner">
+            <p style="font-size: 100px; letter-spacing: 2px; line-height: 1;">Join Our Ceremony!</p>
+            <p style="font-size: 50px; letter-spacing: 2px; line-height: 1.5;">Click here to complete the form.</p>
+            <a class="button-link type1" href="https://www.surveycake.com/s/BakOw" target="_blank">RSVP</a>
+        </section>
 
-    <!-- 浮動返回map按鈕 -->
-    <!-- <button id="to-map" onclick="scrollToMap()">
+        <!-- 浮動返回map按鈕 -->
+        <!-- <button id="to-map" onclick="scrollToMap()">
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="white" viewBox="0 0 24 24">
             <path d="M12 17.414 3.293 8.707l1.414-1.414L12 14.586l7.293-7.293 1.414 1.414L12 17.414z" />
         </svg>
     </button> -->
-    <!-- 浮動返回banner按鈕 -->
-    <!-- <button id="to-banner" onclick="scrollToBanner()">
+        <!-- 浮動返回banner按鈕 -->
+        <!-- <button id="to-banner" onclick="scrollToBanner()">
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="white" viewBox="0 0 24 24">
             <path d="M12 17.414 3.293 8.707l1.414-1.414L12 14.586l7.293-7.293 1.414 1.414L12 17.414z" />
         </svg>
     </button> -->
-    <!-- 浮動返回首頁按鈕 -->
-    <!-- <button id="back-to-top" onclick="scrollToTop()">
+        <!-- 浮動返回首頁按鈕 -->
+        <!-- <button id="back-to-top" onclick="scrollToTop()">
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="white" viewBox="0 0 24 24">
             <path d="M12 6.586 3.293 15.293l1.414 1.414L12 9.414l7.293 7.293 1.414-1.414z" />
         </svg>
     </button> -->
-
+    </div>
 </body>
 
 
