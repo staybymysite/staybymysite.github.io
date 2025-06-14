@@ -102,7 +102,11 @@ slides.forEach((slide, index) => {
 });
 
 // get there toggle
-document.querySelector('.there-title').addEventListener('click', function () {
-    const ul = document.querySelector('.route');
-    ul.classList.toggle('show');
+const title = document.querySelector('.there-title');
+const routeList = document.querySelector('.route');
+const icon = title.querySelector('.toggle-icon');
+
+title.addEventListener('click', () => {
+    const isOpen = routeList.classList.toggle('show');
+    icon.textContent = isOpen ? ' -' : ' +';
 });
