@@ -128,21 +128,6 @@ section {
     overflow: hidden;
 }
 
-.sea {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-size: cover;
-    background-position: center;
-    background-color: #a3c2d6;
-    z-index: -1;
-    opacity: 1;
-    transition: 1;
-    background-image: url('img/sea.jpg');
-}
-
 .bg-image {
     position: absolute;
     top: 0;
