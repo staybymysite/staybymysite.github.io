@@ -1,32 +1,12 @@
 // loading
-// var timeout;
-
-// function loadPage() {
-//     timeout = setTimeout(showPage, 2000);
-// }
-
-// function showPage() {
-//   document.getElementById("loader").style.display = "none";
-//   document.getElementById("wedding").style.display = "block";
-// }
-// window.addEventListener('load', () => {
-//     setTimeout(() => {
-//         const loader = document.getElementById('loader-wrapper');
-//         loader.style.opacity = '0';
-//         setTimeout(() => {
-//             loader.remove(); // 從 DOM 移除
-//             document.getElementById('main-content').style.display = 'block'; // 顯示主內容
-//         }, 500); // 等待淡出結束
-//     }, 2000); // 3 秒載入時間
-// });
 window.addEventListener('load', () => {
+    document.getElementById('main-content').style.display = 'block';
     const loader = document.getElementById('loader-wrapper');
     loader.style.opacity = '0';
     setTimeout(() => {
-      loader.remove(); // 從 DOM 移除動畫元素
-      document.getElementById('main-content').style.display = 'block';
+        loader.remove(); // 從 DOM 移除動畫元素
     }, 500); // 等待淡出動畫結束
-  });
+});
 
 // home background
 const bgImages = document.querySelectorAll('.bg-image');
@@ -86,60 +66,30 @@ function easeInOutQuad(t) {
     return t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
 }
 
-// slides
-// let slideIndex = 0;
-// const slides = document.getElementById("slides");
-// const totalSlides = slides.children.length;
+// slide 滑動
+const radios = Array.from(document.querySelectorAll('input[name="a"]'));
+const slides = document.querySelectorAll('.ci');
 
-// setInterval(() => {
-//     slideIndex = (slideIndex + 1) % totalSlides;
-//     slides.style.transform = `translateX(-${slideIndex * 100}%)`;
-// }, 3000);
+let startX = 0;
 
-// 顯示/隱藏 to map 按鈕
-const toMapBtn = document.getElementById("to-map");
-window.addEventListener("scroll", () => {
-    const fromTop = window.scrollY;
-    if ((fromTop > window.innerHeight * 0.8 && fromTop < window.innerHeight * 0.8 * 2) | (fromTop > window.innerHeight * 0.8 * 2 && fromTop < window.innerHeight * 0.8 * 3)) {
-        toMapBtn.style.display = "block";
-    } else {
-        toMapBtn.style.display = "none";
-    }
+slides.forEach((slide, index) => {
+    slide.addEventListener('touchstart', e => {
+        startX = e.touches[0].clientX;
+    });
+
+    slide.addEventListener('touchend', e => {
+        const endX = e.changedTouches[0].clientX;
+        const diffX = endX - startX;
+
+        // 判斷滑動距離是否足夠
+        if (Math.abs(diffX) > 50) {
+            if (diffX < 0 && index < radios.length - 1) {
+                // 向左滑：下一張
+                radios[index + 1].checked = true;
+            } else if (diffX > 0 && index > 0) {
+                // 向右滑：上一張
+                radios[index - 1].checked = true;
+            }
+        }
+    });
 });
-
-// to map頁動畫
-function scrollToMap() {
-    document.getElementById("map-section").scrollIntoView({ behavior: "smooth" });
-}
-
-// 顯示/隱藏 to banner 按鈕
-const toBannerBtn = document.getElementById("to-banner");
-window.addEventListener("scroll", () => {
-    const fromTop = window.scrollY;
-    if (fromTop > window.innerHeight * 0.8 * 2 && fromTop < window.innerHeight * 0.8 * 3) {
-        toBannerBtn.style.display = "block";
-    } else {
-        toBannerBtn.style.display = "none";
-    }
-});
-
-// to banner 頁動畫
-function scrollToBanner() {
-    document.getElementById("banner").scrollIntoView({ behavior: "smooth" });
-}
-
-// 顯示/隱藏「返回首頁」按鈕
-const backToTopBtn = document.getElementById("back-to-top");
-window.addEventListener("scroll", () => {
-    const fromTop = window.scrollY;
-    if (fromTop > window.innerHeight * 0.8) {
-        backToTopBtn.style.display = "block";
-    } else {
-        backToTopBtn.style.display = "none";
-    }
-});
-
-// 回到首頁動畫
-function scrollToTop() {
-    document.getElementById("home").scrollIntoView({ behavior: "smooth" });
-}
