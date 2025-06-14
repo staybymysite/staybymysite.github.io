@@ -4,23 +4,29 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="img/favicon.ico">
     <link rel="stylesheet" href="style.css">
     <title>Time for Us</title>
 </head>
 
-<body onload="loadPage()" style="margin:0;">
+<body>
     <!-- loading -->
-    <div id="loader"></div>
-    <div style="display:none;" id="wedding" class="animate-bottom">
+    <!-- <div id="loader"></div>
+    <div style="display:none;" id="wedding" class="animate-bottom"> -->
+    <div id="loader-wrapper">
+        <div class="loader"></div>
+    </div>
+
+    <div id="main-content" style="display:none;">
         <!-- 首頁 -->
         <section id="home">
             <div id="bg1" class="bg-image active" style="background-image: url('img/home_01.jpg')"></div>
             <div id="bg2" class="bg-image" style="background-image: url('img/home_02.jpg')"></div>
             <div id="bg3" class="bg-image" style="background-image: url('img/home_03.jpg')"></div>
             <div class="title-container">
-                <p class="title">涂志宏</p>
+                <p class="title m">涂志宏</p>
                 <p class="title">&</p>
-                <p class="title">郭宜婷</p>
+                <p class="title f">郭宜婷</p>
             </div>
             <button class="button-home" onclick="smoothScrollToElement('slide')">Journey Begins</button>
         </section>
