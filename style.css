@@ -357,7 +357,7 @@ input:not(:checked)+label+.ci {
 }
 
 .route.show {
-    max-height: 500px;
+    max-height: 1000px;
     /* 假設最大高度 */
     opacity: 1;
 }
