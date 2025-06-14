@@ -9,24 +9,24 @@
 //   document.getElementById("loader").style.display = "none";
 //   document.getElementById("wedding").style.display = "block";
 // }
-window.addEventListener('load', () => {
-    setTimeout(() => {
-        const loader = document.getElementById('loader-wrapper');
-        loader.style.opacity = '0';
-        setTimeout(() => {
-            loader.remove(); // 從 DOM 移除
-            document.getElementById('main-content').style.display = 'block'; // 顯示主內容
-        }, 500); // 等待淡出結束
-    }, 2000); // 3 秒載入時間
-});
 // window.addEventListener('load', () => {
-//     const loader = document.getElementById('loader-wrapper');
-//     loader.style.opacity = '0';
 //     setTimeout(() => {
-//       loader.remove(); // 從 DOM 移除動畫元素
-//       document.getElementById('main-content').style.display = 'block';
-//     }, 500); // 等待淡出動畫結束
-//   });
+//         const loader = document.getElementById('loader-wrapper');
+//         loader.style.opacity = '0';
+//         setTimeout(() => {
+//             loader.remove(); // 從 DOM 移除
+//             document.getElementById('main-content').style.display = 'block'; // 顯示主內容
+//         }, 500); // 等待淡出結束
+//     }, 2000); // 3 秒載入時間
+// });
+window.addEventListener('load', () => {
+    const loader = document.getElementById('loader-wrapper');
+    loader.style.opacity = '0';
+    setTimeout(() => {
+      loader.remove(); // 從 DOM 移除動畫元素
+      document.getElementById('main-content').style.display = 'block';
+    }, 500); // 等待淡出動畫結束
+  });
 
 // home background
 const bgImages = document.querySelectorAll('.bg-image');
