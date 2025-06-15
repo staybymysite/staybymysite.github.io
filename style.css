@@ -320,7 +320,7 @@ input:not(:checked)+label+.ci {
 }
 
 .there-title {
-    font-size: 50px;
+    font-size: 40px;
     letter-spacing: 2px;
     color: #B698E4;
     line-height: 1;
