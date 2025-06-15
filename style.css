@@ -326,10 +326,10 @@ input:not(:checked)+label+.ci {
     line-height: 1;
     cursor: pointer;
     user-select: none;
-    border: 2.5px solid #B698E4;
-    border-radius: 4px;
+    border: 3px solid #B698E4;
+    border-radius: 20px;
     margin-bottom: 60px;
-    font-weight: 500;
+    font-weight: 600;
 }
 
 .info {

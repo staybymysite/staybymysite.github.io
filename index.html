@@ -19,9 +19,13 @@
     <div id="main-content" style="display:none;">
         <!-- 首頁 -->
         <section id="home">
-            <div id="bg1" class="bg-image active" style="background-image: url('img/home_01_.jpg')"></div>
-            <div id="bg2" class="bg-image" style="background-image: url('img/home_02_.jpg')"></div>
-            <div id="bg3" class="bg-image" style="background-image: url('img/home_03_.jpg')"></div>
+            <!-- <div id="bg1" class="bg-image active" style="background-image: url('img/home_01_.jpg')"></div> -->
+            <!-- <div id="bg2" class="bg-image" style="background-image: url('img/home_02_.jpg')"></div>
+            <div id="bg3" class="bg-image" style="background-image: url('img/home_03_.jpg')"></div> -->
+            <div id="bg1" class="bg-image active"></div>
+            <div id="bg2" class="bg-image"></div>
+            <div id="bg3" class="bg-image"></div>
+
             <div class="title-container">
                 <p class="title m">涂志宏</p>
                 <p class="title">&</p>
@@ -39,13 +43,19 @@
                 <div class="ci" style="--z: 4">
                     <h2 class="ch" style="--h: 32; --s: 80%; --l: 90%">"You are the one I've been
                         waiting for."</h2>
-                    <img src="img/story_01.jpg" loading="lazy" alt="Snow on leafs">
+                    <picture>
+                        <source srcset="img/story_01.webp" type="image/webp">
+                        <img src="img/story_01.jpg" loading="lazy" alt="Snow on leafs">
+                    </picture>
                 </div>
                 <input type="radio" name="a" id="cr-2">
                 <label for="cr-2" style="--hue: 233"></label>
                 <div class="ci" style="--z: 3">
                     <h2 class="ch" style="--h: 82; --s: 80%; --l: 90%">"I want to grow old with you."</h2>
-                    <img src="img/story_02.jpg" loading="lazy" alt="Trees">
+                    <picture>
+                        <source srcset="img/story_02.webp" type="image/webp">
+                        <img src="img/story_02.jpg" loading="lazy" alt="Trees">
+                    </picture>
                 </div>
                 <input type="radio" name="a" id="cr-3">
                 <label for="cr-3" style="--hue: 267"></label>
@@ -53,7 +63,10 @@
                     <h2 class="ch" style="--h: 40; --s: 100%; --l: 89%">"Love isn't about who you
                         envision spending the rest of your life with; it's about who you imagine being unable to live a
                         life without."</h2>
-                    <img src="img/story_03.jpg" loading="lazy" alt="Mountains and houses">
+                    <picture>
+                        <source srcset="img/story_03.webp" type="image/webp">
+                        <img src="img/story_03.jpg" loading="lazy" alt="Mountains and houses">
+                    </picture>
                 </div>
             </div>
         </section>

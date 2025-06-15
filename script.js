@@ -30,6 +30,26 @@ window.addEventListener('scroll', () => {
     showImage(currentIndex);
 });
 
+// use webp img
+function supportsWebP(callback) {
+    const img = new Image();
+    img.onload = () => callback(img.width > 0 && img.height > 0);
+    img.onerror = () => callback(false);
+    img.src = "data:image/webp;base64,UklGRiIAAABXRUJQVlA4IBgAAAAwAQCdASoQABAAPpGdGgAAQUxQSAIAAAAA";
+}
+
+supportsWebP(function (supported) {
+    const bg1 = document.getElementById("bg1");
+    const imgSrc = supported ? "img/home_01.webp" : "img/home_01.jpg";
+    bg1.style.backgroundImage = `url('${imgSrc}')`;
+    const bg2 = document.getElementById("bg2");
+    const imgSrc2 = supported ? "img/home_02.webp" : "img/home_02.jpg";
+    bg2.style.backgroundImage = `url('${imgSrc2}')`;
+    const bg3 = document.getElementById("bg3");
+    const imgSrc3 = supported ? "img/home_03.webp" : "img/home_03.jpg";
+    bg3.style.backgroundImage = `url('${imgSrc3}')`;
+});
+
 // enter btn
 function smoothScrollToElement(id) {
     const target = document.getElementById(id);
