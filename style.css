@@ -4,14 +4,13 @@
     box-sizing: border-box;
 }
 
-@font-face {
+/* @font-face {
     font-family: 'MyCustomFont';
     src: url('fonts/ChenYuluoyan-2.0-Thin.ttf') format('truetype');
-}
-
+} */
 @font-face {
-    font-family: 'InfoFont';
-    src: url('fonts/JasonHandwriting2.ttf') format('truetype');
+    font-family: 'MyCustomFont';
+    src: url('fonts/ChenYuluoyan-20-Thin.woff2') format('woff2');
 }
 
 html,
