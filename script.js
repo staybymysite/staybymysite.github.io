@@ -103,3 +103,28 @@ title.addEventListener('click', () => {
     const isOpen = routeList.classList.toggle('show');
     icon.textContent = isOpen ? ' -' : ' +';
 });
+
+// 載入base64 slides
+function loadLazyCSS(href) {
+    console.log("load fuck");
+    const link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.href = href;
+    link.media = 'print'; // prevent blocking
+    link.onload = () => {
+        link.media = 'all'; // apply the style
+        console.log("load fuck done~");
+        
+        // lazy loading the base64 images
+        ["story_01", "story_02", "story_03"].forEach((slide, index) => {
+            const img = document.getElementById(slide);
+            const base64 = getComputedStyle(document.documentElement).getPropertyValue("--" + slide + "-base64");
+            img.src = base64.slice(4, -1).replaceAll('"', ''); // Remove url("...") wrapper
+        })
+    };
+    document.head.appendChild(link);
+    console.log("load fuck done");
+}
+
+// Run it
+loadLazyCSS("imgs.css");
