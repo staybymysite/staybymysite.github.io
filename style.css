@@ -1,3 +1,24 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: 'MyCustomFont';
+    src: url('fonts/ChenYuluoyan-2.0-Thin.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'InfoFont';
+    src: url('fonts/JasonHandwriting2.ttf') format('truetype');
+}
+
+html,
+body {
+    scroll-behavior: smooth;
+    font-family: 'MyCustomFont';
+}
 
 /* loading */
 #loader-wrapper {
