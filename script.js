@@ -1,11 +1,27 @@
 // loading
+//window.addEventListener('load', () => {
+//    document.getElementById('main-content').style.display = 'block';
+//    const loader = document.getElementById('loader-wrapper');
+//    loader.style.opacity = '0';
+//    setTimeout(() => {
+//        loader.remove(); // 從 DOM 移除動畫元素
+//    }, 500); // 等待淡出動畫結束
+//});
 window.addEventListener('load', () => {
-    document.getElementById('main-content').style.display = 'block';
-    const loader = document.getElementById('loader-wrapper');
-    loader.style.opacity = '0';
-    setTimeout(() => {
-        loader.remove(); // 從 DOM 移除動畫元素
-    }, 500); // 等待淡出動畫結束
+    const loader = document.getElementById('loader-wrapper');
+    const mainContent = document.getElementById('main-content');
+
+    // 強制顯示載入動畫 2 秒
+    setTimeout(() => {
+        // 淡出 loader
+        loader.style.opacity = '0';
+
+        // 淡出完成後移除 loader，顯示主內容
+        setTimeout(() => {
+            loader.remove(); // 從 DOM 移除動畫元素
+            mainContent.style.display = 'block';
+        }, 500); // 等待淡出動畫完成
+    }, 2000); // 固定顯示載入動畫 2 秒
 });
 
 // home background
