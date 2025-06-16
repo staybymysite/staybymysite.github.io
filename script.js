@@ -1,28 +1,29 @@
 // loading
-//window.addEventListener('load', () => {
+window.addEventListener('load', () => {
+    const loader = document.getElementById('loader-wrapper');
+    const mainContent = document.getElementById('main-content');
+
+    // 強制顯示載入動畫 2 秒
+    setTimeout(() => {
+        // 淡出 loader
+        loader.style.opacity = '0';
+
+        // 淡出完成後移除 loader，顯示主內容
+        setTimeout(() => {
+            loader.remove(); // 從 DOM 移除動畫元素
+            mainContent.style.display = 'block';
+        }, 500); // 等待淡出動畫完成
+    }, 2000); // 固定顯示載入動畫 2 秒
+});
+
+// window.addEventListener('load', () => {
 //    document.getElementById('main-content').style.display = 'block';
 //    const loader = document.getElementById('loader-wrapper');
 //    loader.style.opacity = '0';
 //    setTimeout(() => {
 //        loader.remove(); // 從 DOM 移除動畫元素
 //    }, 500); // 等待淡出動畫結束
-//});
-window.addEventListener('load', () => {
-    const loader = document.getElementById('loader-wrapper');
-    const mainContent = document.getElementById('main-content');
-
-    // 強制顯示載入動畫 2 秒
-    setTimeout(() => {
-        // 淡出 loader
-        loader.style.opacity = '0';
-
-        // 淡出完成後移除 loader，顯示主內容
-        setTimeout(() => {
-            loader.remove(); // 從 DOM 移除動畫元素
-            mainContent.style.display = 'block';
-        }, 500); // 等待淡出動畫完成
-    }, 2000); // 固定顯示載入動畫 2 秒
-});
+// });
 
 // home background
 const bgImages = document.querySelectorAll('.bg-image');
@@ -45,26 +46,6 @@ window.addEventListener('scroll', () => {
     }
     showImage(currentIndex);
 });
-
-// use webp img
-// function supportsWebP(callback) {
-//     const img = new Image();
-//     img.onload = () => callback(img.width > 0 && img.height > 0);
-//     img.onerror = () => callback(false);
-//     img.src = "data:image/webp;base64,UklGRiIAAABXRUJQVlA4IBgAAAAwAQCdASoQABAAPpGdGgAAQUxQSAIAAAAA";
-// }
-
-// supportsWebP(function (supported) {
-//     const bg1 = document.getElementById("bg1");
-//     const imgSrc = supported ? "img/home_01.webp" : "img/home_01.jpg";
-//     bg1.style.backgroundImage = `url('${imgSrc}')`;
-//     const bg2 = document.getElementById("bg2");
-//     const imgSrc2 = supported ? "img/home_02.webp" : "img/home_02.jpg";
-//     bg2.style.backgroundImage = `url('${imgSrc2}')`;
-//     const bg3 = document.getElementById("bg3");
-//     const imgSrc3 = supported ? "img/home_03.webp" : "img/home_03.jpg";
-//     bg3.style.backgroundImage = `url('${imgSrc3}')`;
-// });
 
 // enter btn
 function smoothScrollToElement(id) {
@@ -102,7 +83,7 @@ function easeInOutQuad(t) {
     return t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
 }
 
-// slide 滑動
+// slide 左右滑動
 const radios = Array.from(document.querySelectorAll('input[name="a"]'));
 const slides = document.querySelectorAll('.ci');
 

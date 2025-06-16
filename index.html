@@ -6,12 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/x-icon" href="img/favicon.ico">
     <!-- <link rel="preload" href="fonts/ChenYuluoyan-20-Thin.woff2" as="font" type="font/woff2" crossorigin="anonymous"> -->
-    <!-- <link rel="stylesheet" href="style.css" media="print" onload="this.media='all'"> -->
-    <!-- <link rel="stylesheet" href="font.css" media="print" onload="this.media='all'"> -->
-    <link rel="stylesheet" href="font.css">
-    <!-- <link rel="stylesheet" href="imgs.css"> -->
+    <!-- <link rel="stylesheet" href="css/style.css" media="print" onload="this.media='all'"> -->
+    <!-- <link rel="stylesheet" href="css/font.css" media="print" onload="this.media='all'"> -->
+    <!-- <link rel="stylesheet" href="css/font.css"> -->
     <title>Time for Us</title>
     <style>
+        @font-face {
+            font-family: 'MyCustomFont';
+            src: url('fonts/ChenYuluoyan-20-Thin.woff2') format('woff2');
+            font-display: swap;
+        }
+
         * {
             margin: 0;
             padding: 0;
@@ -518,12 +523,6 @@
     <div id="main-content" style="display:none;">
         <!-- 首頁 -->
         <section id="home">
-            <!-- <div id="bg1" class="bg-image active" style="background-image: url('img/home_01_.jpg')"></div> -->
-            <!-- <div id="bg2" class="bg-image" style="background-image: url('img/home_02_.jpg')"></div>
-            <div id="bg3" class="bg-image" style="background-image: url('img/home_03_.jpg')"></div> -->
-            <!-- <div id="bg1" class="bg-image active"></div>
-            <div id="bg2" class="bg-image"></div>
-            <div id="bg3" class="bg-image"></div> -->
             <div id="bg1" class="bg-image active" style="background-image: url('img/home_01.webp')"></div>
             <div id="bg2" class="bg-image" style="background-image: url('img/home_02.webp')"></div>
             <div id="bg3" class="bg-image" style="background-image: url('img/home_03.webp')"></div>
@@ -545,20 +544,12 @@
                 <div class="ci" style="--z: 4">
                     <h2 class="ch" style="--h: 32; --s: 80%; --l: 90%">"You are the one I've been
                         waiting for."</h2>
-                    <!-- <picture>
-                        <source srcset="img/story_01.webp" type="image/webp">
-                        <img src="img/story_01.jpg" loading="lazy" alt="Snow on leafs">
-                    </picture> -->
                     <img src="img/story_01.webp" loading="lazy" alt="Snow on leafs">
                 </div>
                 <input type="radio" name="a" id="cr-2">
                 <label for="cr-2" style="--hue: 233"></label>
                 <div class="ci" style="--z: 3">
                     <h2 class="ch" style="--h: 82; --s: 80%; --l: 90%">"I want to grow old with you."</h2>
-                    <!-- <picture>
-                        <source srcset="img/story_02.webp" type="image/webp">
-                        <img src="img/story_02.jpg" loading="lazy" alt="Trees">
-                    </picture> -->
                     <img src="img/story_02.webp" loading="lazy" alt="Trees">
                 </div>
                 <input type="radio" name="a" id="cr-3">
@@ -567,16 +558,12 @@
                     <h2 class="ch" style="--h: 40; --s: 100%; --l: 89%">"Love isn't about who you
                         envision spending the rest of your life with; it's about who you imagine being unable to live a
                         life without."</h2>
-                    <!-- <picture>
-                        <source srcset="img/story_03.webp" type="image/webp">
-                        <img src="img/story_03.jpg" loading="lazy" alt="Mountains and houses">
-                    </picture> -->
                     <img src="img/story_03.webp" loading="lazy" alt="Mountains and houses">
                 </div>
             </div>
         </section>
 
-        <!-- 地圖 -->
+        <!-- Event Info -->
         <section id="map-section">
             <p class="title">Event Info.</p>
             <div class="info-grid">
@@ -679,7 +666,7 @@
 
         <!-- Banner -->
         <section id="banner">
-            <p style="font-size: 100px; letter-spacing: 2px; line-height: 1;">Attend Our Wedding!</p>
+            <p class="title" style="line-height: 1;">Attend Our Wedding!</p>
             <p style="font-size: 50px; letter-spacing: 2px; line-height: 1.5;">Click below to complete the form.</p>
             <a class="button-link type1" href="https://www.surveycake.com/s/BakOw" target="_blank">點我填表單</a>
         </section>
